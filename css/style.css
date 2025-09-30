@@ -1,0 +1,305 @@
+/* --- Configurações Globais e Variáveis --- */
+:root {
+    --primary-color: #4A6D7C;
+    --secondary-color: #8DB38B;
+    --light-gray-color: #f4f4f4;
+    --dark-color: #333333;
+    --text-color: #555;
+    --font-title: 'Prata', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Cabeçalho e Navegação --- */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+/* --- Seção Hero (Início) --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506126613408-4e05860a57b0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+/* --- Seções de Conteúdo --- */
+.content-section {
+    padding: 5rem 0;
+}
+
+.content-section h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.bg-light {
+    background: var(--light-gray-color);
+}
+
+.bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+    text-align: center;
+}
+
+.bg-dark h2, .bg-dark p {
+    color: #fff;
+}
+
+/* --- Seção Sobre --- */
+#sobre .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+#sobre .text-content, #sobre .image-content {
+    flex: 1;
+}
+
+#sobre img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Seção Benefícios (Cards) --- */
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Seção Posturas --- */
+.postures-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.posture-card {
+    text-align: center;
+}
+
+.posture-card img {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.posture-card h4 {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+
+/* --- Animação de Fade In --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Rodapé --- */
+.footer {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* --- SEÇÃO DE GALERIA --- */
+.gallery-grid {
+    display: grid; /* Ativa o layout em grade (grid) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* A mágica da responsividade */
+    gap: 1rem; /* Espaçamento entre as fotos */
+}
+
+.gallery-item img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da célula da grade */
+    height: 250px; /* Define uma altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+/* --- Design Responsivo --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%; /* Começa fora da tela */
+        width: 60%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        right: 0; /* Entra na tela */
+    }
+
+    .nav-links li {
+        padding: 1.5rem 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    #sobre .container {
+        flex-direction: column;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+}
